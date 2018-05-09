@@ -1,1 +1,1 @@
-# cookie-stand
+Used demo codes for lab 7 
