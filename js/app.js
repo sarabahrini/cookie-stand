@@ -90,8 +90,6 @@ function renderAllStores() {
         allStores[i].render();
     }
 
-
-
 }
 
 // console.log(pike);
@@ -105,6 +103,7 @@ var alki = new Store(7, 30, 70, 'Alki');
 // pike.render();
 
 renderAllStores();
+console.log(allStores);
 
 
 
@@ -117,3 +116,44 @@ function random(min, max) {
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
 };
+
+//========================================
+// Global variables for DOM access and such
+var salesForm = document.getElementById('userInput');
+var allInputs = [];
+
+// add event listener to salesForm
+salesForm.addEventListener('submit',handleData);
+
+// This function is the event handler for the submission of comments
+function handleData(event) {
+    console.log(event.target.store.value);
+var store = event.target.store.value;
+var numberMin = event.target.numberMin.value;
+var numberMax = event.target.numberMax.value;
+var numberAvg = event.target.numberAvg.value;
+
+
+    event.preventDefault(); // gotta have it for this purpose. prevents page reload on a 'submit' event
+    // Validation to prevent empty form fields
+  if (!store || !numberMin|| !numberMax || !numberAvg) {
+    return alert('Fields cannot be empty!');
+  }
+
+  
+  // This empties the form fields after the data has been grabbed
+//   event.target.who.value = null;
+//   event.target.says.value = null;
+
+  new Store(numberAvg,numberMin,numberMax,store);
+
+ document.getElementById("store-storer").innerHTML= '';
+//   console.log('You just cleared the chat list!');
+    
+  renderAllStores();
+//   console.log(allStores);
+  }
+  
+
+
+
