@@ -1,4 +1,32 @@
 * {
+    font-family: cursive;
+  }
+  
+  body {
+    background: #ccc;
+
+  }
+  
+  table {
+      border: 10px solid black;
+  }
+  
+  td {
+      padding: 10px;
+      border-radius: 15px;
+    border: 1px solid black;
+    background: white;
+  }
+  
+  th {
+      background-color: navy;
+      color: white;
+  }
+  
+ 
+ 
+
+  /* * {
     font-family: 'Baloo', cursive;
   }
   
@@ -21,6 +49,4 @@
       background-color: navy;
       color: white;
   }
-  
-  
- 
+   */
